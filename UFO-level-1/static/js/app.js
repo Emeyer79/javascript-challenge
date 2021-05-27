@@ -2,13 +2,12 @@
 let tableData = data;
 
 
-// tbody, input and button
+//tbody, input and button
 let $tbody = d3.select("tbody");
 let button = d3.select("#filter-btn");
 let inputFieldDate = d3.select("#datetime");
 let inputFieldCity = d3.select("#city");
 let columns = ["datetime", "city", "state", "country", "shape", "durationMinutes", "comments"]
-
 
 // Inputing the data into the HTML
 let addData = (dataInput) => {
@@ -22,15 +21,14 @@ let addData = (dataInput) => {
 addData(tableData);
 
 
-// Creating an Event Listener for the Button
-// Setting up the Filter Button for Date and City
+// Event listener and button
 button.on("click", () => {
 
     d3.event.preventDefault();
     
 
     let inputDate = inputFieldDate.property("value").trim();
-    // console.log(inputDate)
+  
     // trim the inputs 
     let filterDate = tableData.filter(tableData => tableData.datetime === inputDate);
     
